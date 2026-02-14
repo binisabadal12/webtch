@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Order - Gourmet Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style-v2.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-premium fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-gold fs-3" href="index.html" style="font-family: var(--font-heading);">Gourmet
+                Haven</a>
+            <button class="navbar-toggler border-0 text-gold" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservation.html">Reservations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="order.html">
+                            Cart <span class="badge bg-gold text-dark ms-1 rounded-pill" id="cart-count">0</span>
+                        </a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn btn-outline-gold btn-sm px-4">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container section-padding" style="margin-top: 50px;">
+        <div class="section-title">
+            <h2>Your Order</h2>
+            <p class="text-muted">Review your selection before checkout</p>
+        </div>
+
+        <div class="row g-5">
+            <!-- Cart Items -->
+            <div class="col-lg-8 animate-on-scroll">
+                <div class="card card-premium p-4">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle mb-0" style="background: transparent;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body">
+                                <!-- Injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="cart-empty-message" class="text-center py-4 d-none">
+                        <p class="text-muted">Your cart is currently empty.</p>
+                        <a href="menu.html" class="btn btn-gold btn-sm">Browse Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Summary -->
+            <div class="col-lg-4 animate-on-scroll delay-100">
+                <div class="card card-premium p-4 sticky-top" style="top: 100px; z-index: 1;">
+                    <h4 class="mb-4">Order Summary</h4>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-muted">Subtotal</span>
+                        <span class="fw-bold" id="cart-subtotal">NRP 0</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-muted">Tax (13%)</span>
+                        <span class="fw-bold" id="cart-tax">NRP 0</span>
+                    </div>
+                    <hr class="border-secondary">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="h5">Total</span>
+                        <span class="h5 text-gold" id="cart-total">NRP 0</span>
+                    </div>
+
+                    <form id="checkout-form">
+                        <div class="mb-3">
+                            <label class="form-label">Delivery Address</label>
+                            <textarea class="form-control form-control-premium" required rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 py-3">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

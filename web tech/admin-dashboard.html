@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Gourmet Haven</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style-v2.css">
+    <style>
+        .admin-stat-card {
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .admin-stat-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+            background: rgba(30, 30, 30, 0.8);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Admin Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top border-bottom border-secondary">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand text-gold fs-4" href="admin-dashboard.html"
+                style="font-family: var(--font-heading);">
+                <i class="fas fa-shield-alt me-2"></i>Admin Panel
+            </a>
+            <button class="navbar-toggler border-0 text-gold" type="button" data-bs-toggle="collapse"
+                data-bs-target="#adminNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="adminNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="admin-dashboard.html">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin-menu.html">Menu Items</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin-reservations.html">Reservations</a></li>
+                    <li class="nav-item ms-3 border-start border-secondary ps-3">
+                        <a class="nav-link text-white" href="index.html" target="_blank"><i
+                                class="fas fa-external-link-alt me-1"></i> View Site</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a href="#" class="btn btn-outline-danger btn-sm rounded-pill px-3"
+                            onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-4 py-5">
+        <div class="d-flex justify-content-between align-items-center mb-5 fade-in-up">
+            <div>
+                <h2 class="mb-0">Dashboard Overview</h2>
+                <p class="text-muted">Welcome back, Admin</p>
+            </div>
+            <span class="text-gold" id="current-date"></span>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="row g-4 mb-5 fade-in-up delay-100">
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Total Orders</h6>
+                        <h3 class="mb-0 text-white">1,245</h3>
+                    </div>
+                    <div class="icon-box bg-gold text-dark">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Revenue</h6>
+                        <h3 class="mb-0 text-white">NRP 450K</h3>
+                    </div>
+                    <div class="icon-box bg-success text-white">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Reservations</h6>
+                        <h3 class="mb-0 text-white">58</h3>
+                    </div>
+                    <div class="icon-box bg-info text-white">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="admin-stat-card">
+                    <div>
+                        <h6 class="text-muted text-uppercase mb-1">Active Menu</h6>
+                        <h3 class="mb-0 text-white">32 Items</h3>
+                    </div>
+                    <div class="icon-box bg-warning text-dark">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card card-premium p-4 fade-in-up delay-200">
+            <h4 class="mb-4">Recent Orders</h4>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover align-middle mb-0" style="background: transparent;">
+                    <thead>
+                        <tr>
+                            <th class="ps-3">Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ps-3 text-muted">#ORD-001</td>
+                            <td>John Doe</td>
+                            <td>Steak Frites, Red Wine</td>
+                            <td class="text-gold">NRP 2,200</td>
+                            <td><span class="badge bg-success rounded-pill">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-3 text-muted">#ORD-002</td>
+                            <td>Sarah Smith</td>
+                            <td>Avocado Toast</td>
+                            <td class="text-gold">NRP 550</td>
+                            <td><span class="badge bg-warning text-dark rounded-pill">Pending</span></td>
+                        </tr>
+                        <!-- More mock rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('current-date').textContent = new Date().toDateString();
+
+        function logout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            window.location.href = 'login.html';
+        }
+
+        // Verify Admin Auth
+        if (!sessionStorage.getItem('adminLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+
+</html>

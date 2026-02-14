@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #ffc800; /* Gold/Yellow from the examples, adjustable */
+    --secondary-color: #212529; /* Dark gray */
+    --text-color: #muted;
+    --bg-color: #f8f9fa;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* Navigation */
+#mainNav {
+    background-color: var(--secondary-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#mainNav .navbar-brand {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.75em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+#mainNav .nav-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+#mainNav .nav-link:hover, #mainNav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Header/Masthead */
+header.masthead {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: white;
+    background-color: var(--secondary-color); /* Fallback */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1514362545857-3bc16549766b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Placeholder image */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+header.masthead .masthead-subheading {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    font-family: var(--font-heading);
+}
+
+header.masthead .masthead-heading {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 50px;
+    font-family: var(--font-heading);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #cca000;
+    border-color: #cca000;
+    color: white;
+}
+
+.btn-xl {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Sections */
+.page-section {
+    padding: 6rem 0;
+}
+
+.page-section h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.page-section h3.section-subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 4rem;
+    font-family: var(--font-body);
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+}
+
+.btn-social {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 100%;
+}
+
+/* Utility */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Badge for Cart */
+#cart-count {
+    font-size: 0.7rem;
+}
